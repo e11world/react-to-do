@@ -1,0 +1,25 @@
+@import "_config.scss";
+@import "_vars.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    /* background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); */
+    /* background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%); */
+    /* background-image: linear-gradient(to bottom, #005bea 0%, #764ba2 100%); */
+    background-image: linear-gradient(to bottom, #00c6fb 0%, #005bea 100%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+  }
+
+  form {
+      input, button {
+        //   border-radius: $corners-rounded;
+      }
+       
+  }

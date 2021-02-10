@@ -1,0 +1,132 @@
+/* VARS */
+
+$black: #010000;
+$white: #fff;
+$lightGrey: #e6e6e6;
+$darkGrey: #333;
+$red: #ff1755;
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+) !default;
+
+$grid-breakpoint-xs: 480px;
+$grid-breakpoint-sm: 768px;
+$grid-breakpoint-md: 992px;
+$grid-breakpoint-lg: 1200px;
+$grid-breakpoint-xl: 1440px;
+$grid-breakpoint-mobile-nav: 1200px;
+
+/* MIXINS */
+
+@mixin translateY($e) {
+    -webkit-transform: translateY($e);
+    -moz-transform: translateY($e);
+    transform: translateY($e);
+}
+
+@mixin transition($t) {
+    -webkit-transition: $t;
+    -moz-transition: $t;
+    transition: $t;
+}
+
+
+
+@mixin device-large {
+    @media only screen and (max-width: 60em) {
+      @content;
+    }
+  }
+  
+  @mixin device-medium {
+    @media only screen and (max-width: 40em) {
+      @content;
+    }
+  }
+  
+  @mixin device-small {
+    @media only screen and (max-width: 30em) {
+      @content;
+    }
+  }
+
+
+  @mixin col-half($number){
+    width:(8.33333333% * $number) + 4.16666665%;
+    float:left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  [class*="col-xs-"]{
+    // margin-bottom:10px;
+  }
+  
+  .col-xs-1-5 { @include col-half(1); }
+  .col-xs-2-5 { @include col-half(2); }
+  .col-xs-3-5 { @include col-half(3); }
+  .col-xs-4-5 { @include col-half(4); }
+  .col-xs-5-5 { @include col-half(5); }
+  .col-xs-6-5 { @include col-half(6); }
+  .col-xs-7-5 { @include col-half(7); }
+  .col-xs-8-5 { @include col-half(8); }
+  .col-xs-9-5 { @include col-half(9); }
+  .col-xs-10-5 { @include col-half(10); }
+  .col-xs-11-5 { @include col-half(11); }
+  
+
+  
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+/* FONTS */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: $black;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    @include font-size(14px)
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    @include transition (.4s ease-in-out);
+
+    &:hover {
+        text-decoration: none;
+        color: $red;
+        @include transition (.4s ease-in-out);
+    }
+}
+
+.container-fluid {
+    line-height: 24px;
+}
+
+
+
+/* FUNCTIONS */
+
+
